@@ -1,9 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://j5g7rajnlpo2"]
+[gd_scene load_steps=10 format=3 uid="uid://j5g7rajnlpo2"]
 
-[ext_resource type="Texture2D" uid="uid://pe50flt7j7mu" path="res://Assets/Sprite Pack 2/2 - Mr. Mochi/Idle (32 x 32).png" id="1_cr5m4"]
 [ext_resource type="Texture2D" uid="uid://das3325b5v1ha" path="res://Assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_gqt7r"]
-[ext_resource type="Script" uid="uid://dphrdecdcghps" path="res://scripts/player.gd" id="1_iba22"]
 [ext_resource type="Texture2D" uid="uid://cr5ct8lyao8jd" path="res://Assets/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="2_vkln7"]
+[ext_resource type="PackedScene" uid="uid://bhh6db4abdirp" path="res://actors/player.tscn" id="3_vqxh8"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_36tpd"]
 tile_data = PackedInt32Array(0, 589825, 1)
@@ -93,9 +92,6 @@ texture = ExtResource("1_gqt7r")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q0dw6"]
 texture = ExtResource("2_vkln7")
-15:2/0 = 0
-16:2/0 = 0
-17:2/0 = 0
 14:4/0 = 0
 15:4/0 = 0
 16:4/0 = 0
@@ -103,13 +99,6 @@ texture = ExtResource("2_vkln7")
 18:4/0 = 0
 1:5/0 = 0
 3:5/0 = 0
-5:5/0 = 0
-6:5/0 = 0
-7:5/0 = 0
-9:5/0 = 0
-10:5/0 = 0
-11:5/0 = 0
-12:5/0 = 0
 14:5/0 = 0
 16:5/0 = 0
 18:5/0 = 0
@@ -119,41 +108,20 @@ texture = ExtResource("2_vkln7")
 5:1/0 = 0
 9:1/size_in_atlas = Vector2i(3, 3)
 9:1/0 = 0
+15:2/size_in_atlas = Vector2i(3, 1)
+15:2/0 = 0
+9:5/size_in_atlas = Vector2i(4, 1)
+9:5/0 = 0
+5:5/size_in_atlas = Vector2i(3, 1)
+5:5/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_cwd3j"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_yb28w")
 sources/1 = SubResource("TileSetAtlasSource_q0dw6")
 pattern_0 = SubResource("TileMapPattern_36tpd")
 pattern_1 = SubResource("TileMapPattern_jop75")
 pattern_2 = SubResource("TileMapPattern_jubnn")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_14mdu"]
-atlas = ExtResource("1_cr5m4")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oir2h"]
-atlas = ExtResource("1_cr5m4")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_0msum"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_14mdu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oir2h")
-}],
-"loop": true,
-"name": &"Idle",
-"speed": 5.0
-}]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bj217"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iba22"]
-size = Vector2(415, 17)
 
 [node name="World-01" type="Node2D"]
 
@@ -165,20 +133,5 @@ layer_0/tile_data = PackedInt32Array(393217, 65536, 3, 458753, 65536, 4, 393218,
 layer_1/name = "trees"
 layer_1/tile_data = PackedInt32Array(393253, 327681, 1, 262146, 589825, 1, 262153, 589825, 1, 262165, 65537, 1, 393247, 327681, 1, 65555, 589825, 1, 65559, 327681, 1)
 
-[node name="player" type="CharacterBody2D" parent="."]
-position = Vector2(52, 27)
-script = ExtResource("1_iba22")
-
-[node name="Anime" type="AnimatedSprite2D" parent="player"]
-sprite_frames = SubResource("SpriteFrames_0msum")
-animation = &"Idle"
-autoplay = "Idle"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
-shape = SubResource("CapsuleShape2D_bj217")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(209, 145)
-shape = SubResource("RectangleShape2D_iba22")
+[node name="player" parent="." instance=ExtResource("3_vqxh8")]
+position = Vector2(349, 11)

@@ -1,3 +1,2 @@
-res://Levels.tscn
 res://levels/World_01.tscn
-res://scripts/player.gd
+res://actors/player.tscn
