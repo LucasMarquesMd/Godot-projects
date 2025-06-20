@@ -94,8 +94,7 @@ editor_draw_drag_margin = true
 
 [node name="Anime" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_0msum")
-animation = &"jump"
+animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.998496
 
 [node name="Animator" type="AnimationPlayer" parent="."]

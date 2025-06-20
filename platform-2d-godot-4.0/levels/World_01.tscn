@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://j5g7rajnlpo2"]
+[gd_scene load_steps=19 format=3 uid="uid://j5g7rajnlpo2"]
 
 [ext_resource type="Texture2D" uid="uid://das3325b5v1ha" path="res://Assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_gqt7r"]
 [ext_resource type="Texture2D" uid="uid://cr5ct8lyao8jd" path="res://Assets/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="2_vkln7"]
+[ext_resource type="PackedScene" uid="uid://13pjsbg1fg1" path="res://prefabs/coin.tscn" id="3_cwd3j"]
 [ext_resource type="PackedScene" uid="uid://bhh6db4abdirp" path="res://actors/player.tscn" id="3_vqxh8"]
 [ext_resource type="Texture2D" uid="uid://bg8gsnjq0fngm" path="res://Assets/Seasonal Tilesets/1 - Grassland/Background parts/5 - Sky_color.png" id="4_jubnn"]
 [ext_resource type="Texture2D" uid="uid://umcj5dsjnbkg" path="res://Assets/Seasonal Tilesets/1 - Grassland/Background parts/4 - Cloud_cover_2.png" id="5_yb28w"]
@@ -155,6 +156,29 @@ layer_0/tile_data = PackedInt32Array(1245184, 327680, 4, 1179648, 327680, 5, 111
 layer_1/name = "trees"
 layer_1/tile_data = PackedInt32Array(1114114, 65537, 1, 917529, 65537, 1, 1114128, 983041, 2, 1179685, 327681, 5, 1179671, 589825, 5, 720913, 196609, 5, 1179651, 65537, 5, 1179649, 65537, 5, 983064, 65537, 5, 983066, 65537, 5, 1114149, 327681, 1, 786464, 589825, 1, 589836, 589825, 1, 655369, 196609, 5, 655371, 65537, 5, 655373, 65537, 5, 1114158, 917505, 4, 1179694, 917505, 5, 1114159, 983041, 4, 1114160, 1048577, 4, 1114161, 1114113, 4, 1114162, 1179649, 4, 1179696, 1048577, 5, 1179698, 1179649, 5)
 
+[node name="coins" type="Node2D" parent="."]
+
+[node name="coin" parent="coins" instance=ExtResource("3_cwd3j")]
+position = Vector2(360, 128)
+
+[node name="coin2" parent="coins" instance=ExtResource("3_cwd3j")]
+position = Vector2(384, 128)
+
+[node name="coin3" parent="coins" instance=ExtResource("3_cwd3j")]
+position = Vector2(384, 128)
+
+[node name="coin4" parent="coins" instance=ExtResource("3_cwd3j")]
+position = Vector2(432, 128)
+
+[node name="coin5" parent="coins" instance=ExtResource("3_cwd3j")]
+position = Vector2(408, 128)
+
+[node name="coin6" parent="coins" instance=ExtResource("3_cwd3j")]
+position = Vector2(456, 128)
+
+[node name="coin7" parent="coins" instance=ExtResource("3_cwd3j")]
+position = Vector2(136, 296)
+
 [node name="moving_platform" parent="." instance=ExtResource("10_q0dw6")]
 position = Vector2(378, 147)
 
@@ -212,3 +236,27 @@ motion_mirroring = Vector2(432, 0)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("8_40po4")
 centered = false
+
+[node name="coin" parent="." instance=ExtResource("3_cwd3j")]
+position = Vector2(176, 296)
+
+[node name="coin2" parent="." instance=ExtResource("3_cwd3j")]
+position = Vector2(376, 248)
+
+[node name="coin3" parent="." instance=ExtResource("3_cwd3j")]
+position = Vector2(448, 248)
+
+[node name="coin4" parent="." instance=ExtResource("3_cwd3j")]
+position = Vector2(768, 192)
+
+[node name="coin5" parent="." instance=ExtResource("3_cwd3j")]
+position = Vector2(768, 160)
+
+[node name="coin6" parent="." instance=ExtResource("3_cwd3j")]
+position = Vector2(768, 128)
+
+[node name="coin7" parent="." instance=ExtResource("3_cwd3j")]
+position = Vector2(768, 96)
+
+[node name="coin8" parent="." instance=ExtResource("3_cwd3j")]
+position = Vector2(768, 64)
