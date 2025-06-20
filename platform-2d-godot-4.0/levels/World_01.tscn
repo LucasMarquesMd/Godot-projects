@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://j5g7rajnlpo2"]
+[gd_scene load_steps=20 format=3 uid="uid://j5g7rajnlpo2"]
 
 [ext_resource type="Texture2D" uid="uid://das3325b5v1ha" path="res://Assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_gqt7r"]
 [ext_resource type="Texture2D" uid="uid://cr5ct8lyao8jd" path="res://Assets/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="2_vkln7"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bebq7iekuvhkw" path="res://Assets/Seasonal Tilesets/1 - Grassland/Background parts/2 - Hills.png" id="7_cwd3j"]
 [ext_resource type="Texture2D" uid="uid://b4uiv48lpp1al" path="res://Assets/Seasonal Tilesets/1 - Grassland/Background parts/1 - Foreground_scenery.png" id="8_40po4"]
 [ext_resource type="PackedScene" uid="uid://br1txpksocqyo" path="res://prefabs/moving_platform.tscn" id="10_q0dw6"]
+[ext_resource type="PackedScene" uid="uid://bcfs3qp8ghyg1" path="res://actors/enemy.tscn" id="12_40po4"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_36tpd"]
 tile_data = PackedInt32Array(0, 589825, 1)
@@ -179,6 +180,30 @@ position = Vector2(456, 128)
 [node name="coin7" parent="coins" instance=ExtResource("3_cwd3j")]
 position = Vector2(136, 296)
 
+[node name="coin8" parent="coins" instance=ExtResource("3_cwd3j")]
+position = Vector2(176, 296)
+
+[node name="coin9" parent="coins" instance=ExtResource("3_cwd3j")]
+position = Vector2(376, 248)
+
+[node name="coin10" parent="coins" instance=ExtResource("3_cwd3j")]
+position = Vector2(448, 248)
+
+[node name="coin11" parent="coins" instance=ExtResource("3_cwd3j")]
+position = Vector2(768, 192)
+
+[node name="coin12" parent="coins" instance=ExtResource("3_cwd3j")]
+position = Vector2(768, 160)
+
+[node name="coin13" parent="coins" instance=ExtResource("3_cwd3j")]
+position = Vector2(768, 128)
+
+[node name="coin14" parent="coins" instance=ExtResource("3_cwd3j")]
+position = Vector2(768, 96)
+
+[node name="coin15" parent="coins" instance=ExtResource("3_cwd3j")]
+position = Vector2(768, 64)
+
 [node name="moving_platform" parent="." instance=ExtResource("10_q0dw6")]
 position = Vector2(378, 147)
 
@@ -237,26 +262,5 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("8_40po4")
 centered = false
 
-[node name="coin" parent="." instance=ExtResource("3_cwd3j")]
-position = Vector2(176, 296)
-
-[node name="coin2" parent="." instance=ExtResource("3_cwd3j")]
-position = Vector2(376, 248)
-
-[node name="coin3" parent="." instance=ExtResource("3_cwd3j")]
-position = Vector2(448, 248)
-
-[node name="coin4" parent="." instance=ExtResource("3_cwd3j")]
-position = Vector2(768, 192)
-
-[node name="coin5" parent="." instance=ExtResource("3_cwd3j")]
-position = Vector2(768, 160)
-
-[node name="coin6" parent="." instance=ExtResource("3_cwd3j")]
-position = Vector2(768, 128)
-
-[node name="coin7" parent="." instance=ExtResource("3_cwd3j")]
-position = Vector2(768, 96)
-
-[node name="coin8" parent="." instance=ExtResource("3_cwd3j")]
-position = Vector2(768, 64)
+[node name="enemy" parent="." instance=ExtResource("12_40po4")]
+position = Vector2(496, 256)

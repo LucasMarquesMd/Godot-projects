@@ -5,3 +5,5 @@ res://levels/World_01.tscn
 res://actors/player.tscn
 res://prefabs/coin.tscn
 res://scripts/coins.gd
+res://actors/enemy.tscn
+res://scripts/enemy.gd
