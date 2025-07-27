@@ -16,6 +16,8 @@ func _process(delta: float) -> void:
 func game_over() -> void:
 	$ScoreTimer.stop()
 	$MobTimer.stop()
+	$Music.stop()
+	$DeathSound.play()
 	$HUD.show_game_over()
 	
 func new_game():
@@ -24,6 +26,7 @@ func new_game():
 	$StartTimer.start()
 	$HUD.update_socre(score)
 	$HUD.show_message("Get Ready")
+	$Music.play()
 	get_tree().call_group("mobs", "queue_free")
 
 

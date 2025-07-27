@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://c1omlk8yitqey"]
+[gd_scene load_steps=5 format=3 uid="uid://c1omlk8yitqey"]
 
 [ext_resource type="Script" uid="uid://2i5sdl3nwhii" path="res://scripts/hud.gd" id="1_oo0fn"]
 [ext_resource type="FontFile" uid="uid://d1nx2pd82ilcr" path="res://assets/dodge_the_creeps_2d_assets/fonts/Xolonium-Regular.ttf" id="2_5ysmq"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_oo0fn"]
+action = &"start_game"
+
+[sub_resource type="Shortcut" id="Shortcut_5ysmq"]
+events = [SubResource("InputEventAction_oo0fn")]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_oo0fn")
@@ -50,6 +56,7 @@ offset_right = 100.0
 offset_bottom = -40.0
 grow_horizontal = 2
 grow_vertical = 0
+shortcut = SubResource("Shortcut_5ysmq")
 text = "Start
 "
 
