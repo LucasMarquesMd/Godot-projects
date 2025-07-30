@@ -12,6 +12,7 @@ config_version=5
 
 config/name="Squash the Creeps (3D)"
 config/description="In this game, your goal is to chase and kick out the creeps!"
+run/main_scene="uid://tlnh75ttw1sy"
 config/features=PackedStringArray("4.4")
 config/icon="res://icon.webp"
 
@@ -61,6 +62,12 @@ jump={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
 ]
 }
+
+[layer_names]
+
+3d_physics/layer_1="player"
+3d_physics/layer_2="enemies"
+3d_physics/layer_3="world"
 
 [rendering]
 
