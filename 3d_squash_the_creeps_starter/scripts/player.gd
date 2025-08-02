@@ -38,9 +38,14 @@ func _physics_process(delta):
 		# Setting the basis property will affect the rotation of the node
 		$Pivot.basis = Basis.looking_at(direction)
 		
+		$AnimationPlayer.speed_scale = 4
+	else:
+		$AnimationPlayer.speed_scale = 1
+		
 	# Ground Velocity
 	target_velocity.x = direction.x * speed
 	target_velocity.z = direction.z * speed
+	
 	
 	# Vertical velocity
 	if not is_on_floor(): # If in the air, fall towards the floor. Literally gravity
@@ -77,7 +82,10 @@ func _physics_process(delta):
 				# Prevent further duplicate calls.
 				break
 	
+	velocity = target_velocity
 	move_and_slide()
+	
+	$Pivot.rotation.x = PI / 6 * velocity.y / jump_impulse
 
 func die():
 	hit.emit()
